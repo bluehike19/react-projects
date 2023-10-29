@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./chartBox.scss";
-import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
 type Props = {
   color: string;
@@ -27,37 +27,28 @@ const ChartBox = (props: Props) => {
       </div>
       <div className="chartInfo">
         <div className="chart">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={props.chartData}
-              margin={{
-                top: 5,
-                right: 20,
-                bottom: 5,
-              }}>
+          <ResponsiveContainer width="99%" height="100%">
+            <LineChart data={props.chartData}>
               <Tooltip
-                contentStyle={{
-                  background: "transparent",
-                  border: "none",
-                  fontSize: "14px",
-                }}
+                contentStyle={{ background: "transparent", border: "none" }}
                 labelStyle={{ display: "none" }}
-                position={{ x: 25, y: -25 }}
+                position={{ x: 10, y: 70 }}
               />
               <Line
                 type="monotone"
                 dataKey={props.dataKey}
                 stroke={props.color}
+                strokeWidth={2}
                 dot={false}
               />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
         <div className="texts">
           <span
             className="percentage"
-            style={{ color: props.percentage < 0 ? "tomato" : "limegreen" }}>
+            style={{ color: props.percentage < 0 ? "tomato" : "limegreen" }}
+          >
             {props.percentage}%
           </span>
           <span className="duration">this month</span>

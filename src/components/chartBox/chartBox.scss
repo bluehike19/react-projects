@@ -1,31 +1,37 @@
+@import "../../styles/responsive.scss";
+
 .chartBox {
   display: flex;
   height: 100%;
 
+  @include sm{
+    flex-direction: column;
+  }
+
   .boxInfo {
-    flex: 1;
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 20px;
+
+    @include sm{
+      gap: 20px;
+    }
 
     .title {
       display: flex;
       align-items: center;
       gap: 10px;
+
+      @include xxl{
+        font-size: 14px;
+      }
     }
 
-    span{
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    h1 {
-      font-size: 16px;
-    }
-
-    a {
-      font-size: 14px;
+    h1{
+      @include xxl{
+        font-size: 20px;
+      }
     }
   }
 
@@ -36,8 +42,8 @@
     justify-content: space-between;
 
     .chart {
-      height: 100%;
       width: 100%;
+      height: 100%;
     }
 
     .texts {
@@ -48,9 +54,13 @@
       .percentage {
         font-weight: bold;
         font-size: 20px;
+
+        @include xxl{
+          font-size: 16px;
+        }
       }
 
-      .duration {
+      .duration{
         font-size: 14px;
       }
     }
