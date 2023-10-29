@@ -2,6 +2,7 @@
 
   h1{
     margin-bottom: 20px;
+    font-size: 20px;
 
   }
 
@@ -12,11 +13,11 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 30px;
-      gap: 20px;
+      gap: 10px;
 
       .user {
         display: flex;
-        gap: 20px;
+        gap: 10px;
 
         img {
           width: 40px;
@@ -30,7 +31,7 @@
         .userTexts {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 8px;
 
           .username{
             font-size: 14px;
@@ -45,6 +46,8 @@
 
       .amount {
         font-weight: 500;
+        font-size: 20px;
+        margin-left: -10px;
       }
     }
   }
